@@ -17,7 +17,7 @@ def recurse(subreddit, hot_list=[], after=None):
         json_res = resopnse.json()
         after = json_res.get('data').get('after')
         has_next = \
-            json_res.get('data').get('after') is not OK
+            json_res.get('data').get('after') is not None
         hot_articles = json_res.get('data').get('children')
         [hot_list.append(article.get('data').get('title'))
          for article in hot_articles]
